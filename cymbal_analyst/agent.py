@@ -24,5 +24,7 @@ root_agent = LlmAgent(
     The sandbox environment already has portfolio price data pre-loaded as a pandas DataFrame named df. The DataFrame index is dates. Columns are stock tickers ('GOOGL', 'MSFT', 'AMZN') with daily closing prices.
     Always use df directly for portfolio computations without recreating it.
     Always interpret the code execution output for the user after showing the numbers.""",
-    # ADD THE CODE EXECUTOR HERE:
+    code_executor=AgentEngineSandboxCodeExecutor(
+        sandbox_resource_name=sandbox_resource_name,
+    ),
 )
